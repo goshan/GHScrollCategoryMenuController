@@ -16,4 +16,5 @@ build environment: a single page appli for developing
 3. width Regular + height Compact = 5.5寸iPhone的landscape（话说有这种设备吗？）
 4. widht Any + height Any = 基本配置（For all layout）
 5. widht Regular + height Regular = iPad的landscape和portrait
+size class 能够对应4种情况: 约束（Constrants）的设置，文字字体，约束的开关，子视图的开关（是否显示）
 
