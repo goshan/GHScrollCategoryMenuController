@@ -10,6 +10,10 @@
 
 @interface ViewController : UIViewController
 
+@property(nonatomic, strong) IBOutlet UIScrollView *categoryMenuView;
+@property(nonatomic, strong) IBOutlet UIScrollView *listView;
+
+- (void) initWithMenuList:(NSArray *)list;
 
 @end
 
