@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "GHCategoryMenuController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,27 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSMutableArray *listDate = [[NSMutableArray alloc] init];
+    for (int i=0; i<6; i++){
+        UIViewController *viewController = [[UIViewController alloc] init];
+        viewController.view.frame = CGRectMake(0.0, 0.0, 320.0, 546.0);
+        viewController.title = [NSString stringWithFormat:@"goshan%d", i];
+        viewController.view.backgroundColor = [UIColor grayColor];
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100.0, 100.0, 100.0, 50.0)];
+        label.text = viewController.title;
+        label.textColor = [UIColor blueColor];
+        
+        [viewController.view addSubview:label];
+        [listDate addObject:viewController];
+    }
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    GHCategoryMenuController *rootController = [[GHCategoryMenuController alloc] initWithFrame:self.window.bounds andMenuHeight:50.0f];
+    rootController.listDate = listDate;
+    self.window.rootViewController = rootController;
+    [self.window addSubview:rootController.view];
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
