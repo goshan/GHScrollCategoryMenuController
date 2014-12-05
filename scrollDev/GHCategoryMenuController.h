@@ -10,12 +10,10 @@
 
 @interface GHCategoryMenuController : UIViewController
 
-@property(nonatomic, strong) UIScrollView *categoryMenuView;
-@property(nonatomic, strong) UIScrollView *listView;
+@property (weak, nonatomic) IBOutlet UIScrollView *menuScrollView;
 
-@property(nonatomic, strong) NSArray *listDate;
 
-- (id)initWithFrame:(CGRect)frame andMenuHeight:(CGFloat)menuHeight;
+- (void)setupWithMenuList:(NSArray *)list;
 
 @end
 

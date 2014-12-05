@@ -18,6 +18,8 @@ build environment: a single page appli for developing
 5. widht Regular + height Regular = iPad的landscape和portrait
 size class 能够对应4种情况: 约束（Constrants）的设置，文字字体，约束的开关，子视图的开关（是否显示）
 
-2014.11.22
+2014.11.23
+代码添加scroolview滑动出现不顺畅问题，按住再滑动则无效
+更换为xib却发生初始化找不到xib的问题
 
 
