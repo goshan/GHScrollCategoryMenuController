@@ -10,8 +10,16 @@
 
 @implementation UIColor (GHCategoryMenu)
 
-+ (UIColor *)GHCategoryMenuWordColor{
++ (UIColor *)GHCategoryMenuBlockColor{
     return [UIColor colorWithRed:0.275 green:0.482 blue:0.922 alpha:1.000];
+}
+
++ (UIColor *)GHCategoryMenuWordColor{
+    return [UIColor lightGrayColor];
+}
+
++ (UIColor *)GHCategoryMenuWordSelectedColor{
+    return [UIColor colorWithWhite:0.333 alpha:1.000];
 }
 
 @end
