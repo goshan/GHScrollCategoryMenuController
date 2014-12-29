@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GHCategoryMenuController : UIViewController
+@interface GHCategoryMenuController : UIViewController <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *menuScrollView;
-
+@property (weak, nonatomic) IBOutlet UIScrollView *contentViewListScrollView;
 
 - (void)setupWithMenuList:(NSArray *)list;
 

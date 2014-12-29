@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    NSArray *menuList = @[@"goshan1", @"goshan2", @"goshan3", @"goshan4", @"goshan5"];
+    NSArray *menuList = @[@"first", @"second", @"third", @"forth", @"fifth", @"sixth", @"seventh", @"eigth", @"ninth", @"goshan"];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"GHCategoryMenu" bundle:nil];
     GHCategoryMenuController *viewController = [storyboard instantiateInitialViewController];

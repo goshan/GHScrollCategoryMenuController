@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="a3X-yd-y0Q">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
@@ -9,8 +10,8 @@
             <objects>
                 <viewController storyboardIdentifier="CategoryMenuController" id="a3X-yd-y0Q" customClass="GHCategoryMenuController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Tgl-U4-OJF"/>
-                        <viewControllerLayoutGuide type="bottom" id="uun-7P-e06"/>
+                        <viewControllerLayoutGuide type="top" id="kG6-lH-CTj"/>
+                        <viewControllerLayoutGuide type="bottom" id="fO2-qF-tud"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LrA-M6-KRw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -18,9 +19,9 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r4Y-5q-K1c" userLabel="Menu Scroll View">
                                 <rect key="frame" x="0.0" y="65" width="320" height="50"/>
-                            </scrollView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rl0-eD-GUI">
-                                <rect key="frame" x="0.0" y="115" width="320" height="452"/>
+                                <connections>
+                                    <outlet property="delegate" destination="a3X-yd-y0Q" id="ape-Ic-FWo"/>
+                                </connections>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dU9-sB-UGT" userLabel="Up Seperator">
                                 <rect key="frame" x="0.0" y="64" width="320" height="1"/>
@@ -36,6 +37,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rl0-eD-GUI">
+                                <rect key="frame" x="0.0" y="116" width="320" height="452"/>
+                                <connections>
+                                    <outlet property="delegate" destination="a3X-yd-y0Q" id="7Ac-Jl-Aof"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -43,6 +50,7 @@
                     <navigationItem key="navigationItem" id="udR-H0-SQG"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="contentViewListScrollView" destination="Rl0-eD-GUI" id="Ijg-bG-96V"/>
                         <outlet property="menuScrollView" destination="r4Y-5q-K1c" id="4g7-jG-5cS"/>
                     </connections>
                 </viewController>
