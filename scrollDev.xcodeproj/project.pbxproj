@@ -12,7 +12,6 @@
 		165D23EF1A1F95810083C406 /* GHCategoryMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 165D23EE1A1F95810083C406 /* GHCategoryMenuController.m */; };
 		165D23F41A1F95810083C406 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 165D23F31A1F95810083C406 /* Images.xcassets */; };
 		165D24031A1F95810083C406 /* scrollDevTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 165D24021A1F95810083C406 /* scrollDevTests.m */; };
-		16BFF5431A32272C0090A982 /* GHCategoryMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16BFF5421A32272C0090A982 /* GHCategoryMenu.storyboard */; };
 		16BFF5461A322BB50090A982 /* GHCategoryMenuUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BFF5451A322BB50090A982 /* GHCategoryMenuUtility.m */; };
 		16BFF54A1A3230370090A982 /* UIColor+GHCategoryMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BFF5491A3230370090A982 /* UIColor+GHCategoryMenu.m */; };
 /* End PBXBuildFile section */
@@ -39,7 +38,6 @@
 		165D23FC1A1F95810083C406 /* scrollDevTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = scrollDevTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		165D24011A1F95810083C406 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		165D24021A1F95810083C406 /* scrollDevTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = scrollDevTests.m; sourceTree = "<group>"; };
-		16BFF5421A32272C0090A982 /* GHCategoryMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GHCategoryMenu.storyboard; sourceTree = "<group>"; };
 		16BFF5441A322BB50090A982 /* GHCategoryMenuUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHCategoryMenuUtility.h; sourceTree = "<group>"; };
 		16BFF5451A322BB50090A982 /* GHCategoryMenuUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCategoryMenuUtility.m; sourceTree = "<group>"; };
 		16BFF5481A3230370090A982 /* UIColor+GHCategoryMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+GHCategoryMenu.h"; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 				16BFF5451A322BB50090A982 /* GHCategoryMenuUtility.m */,
 				165D23ED1A1F95810083C406 /* GHCategoryMenuController.h */,
 				165D23EE1A1F95810083C406 /* GHCategoryMenuController.m */,
-				16BFF5421A32272C0090A982 /* GHCategoryMenu.storyboard */,
 				165D23F31A1F95810083C406 /* Images.xcassets */,
 				165D23E61A1F95810083C406 /* Supporting Files */,
 			);
@@ -207,7 +204,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16BFF5431A32272C0090A982 /* GHCategoryMenu.storyboard in Resources */,
 				165D23F41A1F95810083C406 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

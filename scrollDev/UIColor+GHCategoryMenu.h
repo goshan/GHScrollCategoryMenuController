@@ -11,8 +11,9 @@
 @interface UIColor (GHCategoryMenu)
 
 + (UIColor *)GHCategoryMenuBlockColor;
++ (UIColor *)GHCategoryMenuBackgroundColor;
 + (UIColor *)GHCategoryMenuWordSelectedColor;
 + (UIColor *)GHCategoryMenuWordColor;
-
++ (UIColor *)GHCategoryMenuBorderColor;
 
 @end

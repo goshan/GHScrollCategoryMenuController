@@ -8,11 +8,14 @@
 
 #import "GHCategoryMenuUtility.h"
 
+
+const CGFloat GHCategoryMenuHeight = 0.07f;
+
+const CGFloat GHCategoryMenuItemPaddingHorizontal = 10.0;
+const CGFloat GHCategoryMenuItemPaddingVertical = 5.0;
+const CGFloat GHCategoryMenuItemFontSize = 17.0;
+
+
 @implementation GHCategoryMenuUtility
-
-+ (UIColor *)GHMenuItemWordColor{
-    return [UIColor colorWithRed:0.275 green:0.482 blue:0.922 alpha:1.000];
-}
-
 
 @end

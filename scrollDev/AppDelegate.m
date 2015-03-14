@@ -20,12 +20,11 @@
     // Override point for customization after application launch.
     NSArray *menuList = @[@"first", @"second", @"third", @"forth", @"fifth", @"sixth", @"seventh", @"eigth", @"ninth", @"goshan"];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"GHCategoryMenu" bundle:nil];
-    GHCategoryMenuController *viewController = [storyboard instantiateInitialViewController];
+    GHCategoryMenuController *viewController = [[GHCategoryMenuController alloc] init];
     [viewController setupWithMenuList:menuList];
-    //UINavigationController *rootViewController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    self.window.rootViewController = viewController;
-    [self.window addSubview:viewController.view];
+    UINavigationController *rootViewController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    self.window.rootViewController = rootViewController;
+    [self.window addSubview:rootViewController.view];
     [self.window makeKeyAndVisible];
     return YES;
 }

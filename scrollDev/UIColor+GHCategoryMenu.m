@@ -18,8 +18,16 @@
     return [UIColor lightGrayColor];
 }
 
++ (UIColor *)GHCategoryMenuBackgroundColor{
+    return [UIColor whiteColor];
+}
+
 + (UIColor *)GHCategoryMenuWordSelectedColor{
     return [UIColor colorWithWhite:0.333 alpha:1.000];
+}
+
++ (UIColor *)GHCategoryMenuBorderColor{
+    return [UIColor whiteColor];
 }
 
 @end

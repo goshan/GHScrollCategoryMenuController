@@ -10,8 +10,8 @@
 
 @interface GHCategoryMenuController : UIViewController <UIScrollViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIScrollView *menuScrollView;
-@property (weak, nonatomic) IBOutlet UIScrollView *contentViewListScrollView;
+@property (nonatomic, strong) UIScrollView *menuScrollView;
+@property (nonatomic, strong) UIScrollView *contentViewListScrollView;
 
 - (void)setupWithMenuList:(NSArray *)list;
 

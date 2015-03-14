@@ -8,11 +8,10 @@
 
 #import "GHCategoryMenuController.h"
 #import "UIColor+GHCategoryMenu.h"
+#import "GHCategoryMenuUtility.h"
 
 
-const CGFloat menuItemPaddingHorizontal = 10.0;
-const CGFloat menuItemPaddingVertical = 5.0;
-const CGFloat menuItemFontSize = 17.0;
+
 
 @interface GHCategoryMenuController ()
 
@@ -32,10 +31,10 @@ const CGFloat menuItemFontSize = 17.0;
 @implementation GHCategoryMenuController
 
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.view.backgroundColor = [UIColor GHCategoryMenuBackgroundColor];
     [self setupCategoryMenu];
     [self setupContentListView];
 }
@@ -53,6 +52,10 @@ const CGFloat menuItemFontSize = 17.0;
 }
 
 - (void)setupCategoryMenu{
+    CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height * GHCategoryMenuHeight);
+    self.menuScrollView = [[UIScrollView alloc] initWithFrame:frame];
+    self.menuScrollView.delegate = self;
+    
     self.menuItemList = [[NSMutableArray alloc] init];
     CGFloat posX = 0;
     for (int i=0; i<self.menuList.count; i++){
@@ -60,15 +63,12 @@ const CGFloat menuItemFontSize = 17.0;
         UILabel *menuItem = [[UILabel alloc] init];
         menuItem.text = menuName;
         menuItem.textColor = [UIColor GHCategoryMenuWordColor];
-        menuItem.font = [UIFont boldSystemFontOfSize:menuItemFontSize];
+        menuItem.font = [UIFont boldSystemFontOfSize:GHCategoryMenuItemFontSize];
         menuItem.textAlignment = NSTextAlignmentCenter;
         menuItem.tag = i;
         [menuItem sizeToFit];
-        menuItem.frame = CGRectMake(posX, 0, menuItem.frame.size.width + 2 * menuItemPaddingHorizontal, self.menuScrollView.frame.size.height);
+        menuItem.frame = CGRectMake(posX, 0, menuItem.frame.size.width + 2 * GHCategoryMenuItemPaddingHorizontal, self.menuScrollView.frame.size.height);
         menuItem.clipsToBounds = YES;
-        menuItem.layer.borderWidth = 1.0;
-        
-        
         
         [self.menuScrollView addSubview:menuItem];
         [self.menuItemList addObject:menuItem];
@@ -93,18 +93,24 @@ const CGFloat menuItemFontSize = 17.0;
     self.menuScrollView.showsVerticalScrollIndicator = YES;
     [self.menuScrollView setContentSize:CGSizeMake(posX, self.menuScrollView.frame.size.height)];
     self.menuScrollView.bounces = NO;
+    self.menuScrollView.backgroundColor = [UIColor GHCategoryMenuBackgroundColor];
+    
+    [self.view addSubview:self.menuScrollView];
 }
 
 - (void)setupContentListView{
+    CGRect frame = CGRectMake(0, self.view.frame.size.height * GHCategoryMenuHeight, self.view.frame.size.width, self.view.frame.size.height * (1 - GHCategoryMenuHeight));
+    self.contentViewListScrollView = [[UIScrollView alloc] initWithFrame:frame];
+    self.contentViewListScrollView.delegate = self;
+    
     self.contentViewList = [[NSMutableArray alloc] init];
     CGFloat posX = 0.0;
     for (NSString *menuName in self.menuList){
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(posX, 0, self.contentViewListScrollView.frame.size.width, self.contentViewListScrollView.frame.size.height)];
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+        
         label.text = menuName;
         [view addSubview:label];
-        view.layer.borderColor = [UIColor blackColor].CGColor;
-        view.layer.borderWidth = 1.0;
         [self.contentViewListScrollView addSubview:view];
         posX += self.contentViewListScrollView.frame.size.width;
     }
@@ -113,6 +119,9 @@ const CGFloat menuItemFontSize = 17.0;
     self.contentViewListScrollView.showsHorizontalScrollIndicator = NO;
     self.contentViewListScrollView.showsVerticalScrollIndicator = NO;
     self.contentViewListScrollView.bounces = NO;
+    self.contentViewListScrollView.backgroundColor = [UIColor GHCategoryMenuBackgroundColor];
+    
+    [self.view addSubview:self.contentViewListScrollView];
 }
 
 #pragma private method
